@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/guvkon/slackgameserver#readme",
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "redux": "^3.7.2"
   }
 }
