@@ -2,13 +2,13 @@
 
 require('dotenv').config();
 const express = require('express');
-const router = express.Router();
 const fs = require('fs');
 const createStore = require('redux').createStore;
 const gameApp = require('./lib/reducers');
 
 const state = fs.readFileSync('./data/state.json', {charset: 'utf8'});
 global.game = createStore(gameApp, JSON.parse(state));
+console.log(global.game.getState());
 global.game.subscribe(
     () => console.log(global.game.getState())
 );
@@ -24,6 +24,3 @@ app.get('/slack/test', (req, res) => {
 app.listen(process.env.SERVER_PORT, function () {
     console.log('Listening on ', this.address());
 });
-
-
-module.exports = router;

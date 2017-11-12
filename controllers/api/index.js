@@ -19,7 +19,7 @@ router.post('/api', function(req, res) {
     global.game.dispatch(addPlayer(player));
 
     const state = JSON.stringify(global.game.getState());
-    fs.writeFileSync('../../data/state.json', state, {charset: 'utf8'});
+    fs.writeFileSync('./data/state.json', state, {charset: 'utf8'});
 
     const response = {
         response_type: "in_channel",
