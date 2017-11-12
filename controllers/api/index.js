@@ -10,7 +10,7 @@ const commandRegexp = /^('|")([^'^"]*)(?:\1)\s(.*)$/i;
 router.use('/api', tokenVerification);
 
 router.post('/api', function(req, res) {
-    var text = req.body.text;
+    let text = req.body.text;
     if (commandRegexp.test(text)) {
         let matches = commandRegexp.exec(text);
         let title = matches[2];

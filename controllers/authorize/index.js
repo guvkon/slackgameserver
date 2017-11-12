@@ -11,7 +11,7 @@ const privateCredentials = require('../../credentials/private');
 const authRedirectURL = url.format({
     protocol: publicCredentials.protocol,
     hostname: publicCredentials.host,
-    pathname: '/lottery/authorize/complete'
+    pathname: '/slack/game/authorize/complete'
 });
 
 router.get('/authorize/request', authorizeRequest);
@@ -63,7 +63,7 @@ function authorizeComplete(req, res, next) {
             }
         };
         // Send request to Slack.
-        var request = https.request(options, function(response) {
+        let request = https.request(options, function(response) {
             let responseMessage = "";
             response.setEncoding('utf8');
             response.on('data', function(chunk) {
