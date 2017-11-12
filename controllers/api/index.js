@@ -9,7 +9,7 @@ const tokenVerification = require('../../middlewares/tokenverification');
 router.use('/api', tokenVerification);
 
 router.post('/api', function(req, res) {
-    let text = req.body.text;
+    console.log(req.body);
     const response = {
         response_type: "in_channel",
         text: "Testing"
