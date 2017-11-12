@@ -4,8 +4,8 @@ require('dotenv').config();
 const express = require('express');
 const router = express.Router();
 const fs = require('fs');
-import { createStore } from 'redux';
-import gameApp from './lib/reducers';
+const createStore = require('redux').createStore;
+const gameApp = require('./lib/reducers');
 
 const state = fs.readFileSync('./data/state.json', {charset: 'utf8'});
 global.game = createStore(gameApp, JSON.parse(state));

@@ -1,5 +1,6 @@
 "use strict";
-import {addPlayer} from "../../lib/actions";
+
+const addPlayer = require('../../lib/actions').addPlayer;
 
 const express = require('express');
 const router = express.Router();
